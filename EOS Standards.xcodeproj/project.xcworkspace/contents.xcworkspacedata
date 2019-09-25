@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/garethcollins/Desktop/EOS Standards/EOS Standards/rr.png">
+   </FileRef>
+   <FileRef
       location = "self:EOS Standards.xcodeproj">
    </FileRef>
 </Workspace>

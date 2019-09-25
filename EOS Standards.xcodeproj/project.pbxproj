@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,9 +14,19 @@
 		621F1C82233B583100B0D2F5 /* EOS_Standards.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 621F1C80233B583100B0D2F5 /* EOS_Standards.xcdatamodeld */; };
 		621F1C84233B583400B0D2F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 621F1C83233B583400B0D2F5 /* Assets.xcassets */; };
 		621F1C87233B583400B0D2F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 621F1C85233B583400B0D2F5 /* LaunchScreen.storyboard */; };
+		621F1C92233B62B100B0D2F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 621F1C91233B62B100B0D2F5 /* GoogleService-Info.plist */; };
+		621F1C95233B656200B0D2F5 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621F1C94233B656200B0D2F5 /* LogInViewController.swift */; };
+		621F1C97233B69C300B0D2F5 /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621F1C96233B69C300B0D2F5 /* registerViewController.swift */; };
+		621F1C9A233B6D4C00B0D2F5 /* furnitureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621F1C99233B6D4C00B0D2F5 /* furnitureViewController.swift */; };
+		621F1C9C233B6D6400B0D2F5 /* paintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621F1C9B233B6D6400B0D2F5 /* paintViewController.swift */; };
+		621F1C9E233B6D6E00B0D2F5 /* safetyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621F1C9D233B6D6E00B0D2F5 /* safetyViewController.swift */; };
+		621F1CA0233B6D8A00B0D2F5 /* mPandEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621F1C9F233B6D8A00B0D2F5 /* mPandEViewController.swift */; };
+		DD35F13C6ACC91AADA55F5F0 /* Pods_EOS_Standards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18E07F079163B41C1946F2C /* Pods_EOS_Standards.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2ACB19B16EC6C9CE76E14C1F /* Pods-EOS Standards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EOS Standards.debug.xcconfig"; path = "Target Support Files/Pods-EOS Standards/Pods-EOS Standards.debug.xcconfig"; sourceTree = "<group>"; };
+		3094F081B2365BD391B84C3A /* Pods-EOS Standards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EOS Standards.release.xcconfig"; path = "Target Support Files/Pods-EOS Standards/Pods-EOS Standards.release.xcconfig"; sourceTree = "<group>"; };
 		621F1C74233B583100B0D2F5 /* EOS Standards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EOS Standards.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		621F1C77233B583100B0D2F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		621F1C79233B583100B0D2F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +36,15 @@
 		621F1C83233B583400B0D2F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		621F1C86233B583400B0D2F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		621F1C88233B583400B0D2F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		621F1C91233B62B100B0D2F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		621F1C93233B638E00B0D2F5 /* rr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rr.png; path = "/Users/garethcollins/Desktop/EOS Standards/EOS Standards/rr.png"; sourceTree = "<absolute>"; };
+		621F1C94233B656200B0D2F5 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		621F1C96233B69C300B0D2F5 /* registerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
+		621F1C99233B6D4C00B0D2F5 /* furnitureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = furnitureViewController.swift; sourceTree = "<group>"; };
+		621F1C9B233B6D6400B0D2F5 /* paintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paintViewController.swift; sourceTree = "<group>"; };
+		621F1C9D233B6D6E00B0D2F5 /* safetyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = safetyViewController.swift; sourceTree = "<group>"; };
+		621F1C9F233B6D8A00B0D2F5 /* mPandEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mPandEViewController.swift; sourceTree = "<group>"; };
+		B18E07F079163B41C1946F2C /* Pods_EOS_Standards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EOS_Standards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD35F13C6ACC91AADA55F5F0 /* Pods_EOS_Standards.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +64,8 @@
 			children = (
 				621F1C76233B583100B0D2F5 /* EOS Standards */,
 				621F1C75233B583100B0D2F5 /* Products */,
+				7B9FEFDD89824E031EEF155F /* Pods */,
+				80B1176975C154991C2EB986 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,14 +82,55 @@
 			children = (
 				621F1C77233B583100B0D2F5 /* AppDelegate.swift */,
 				621F1C79233B583100B0D2F5 /* SceneDelegate.swift */,
-				621F1C7B233B583100B0D2F5 /* ViewController.swift */,
 				621F1C7D233B583100B0D2F5 /* Main.storyboard */,
+				621F1C98233B6C6F00B0D2F5 /* Login and Registry */,
+				621F1CA1233B6D9500B0D2F5 /* Categories */,
 				621F1C83233B583400B0D2F5 /* Assets.xcassets */,
 				621F1C85233B583400B0D2F5 /* LaunchScreen.storyboard */,
 				621F1C88233B583400B0D2F5 /* Info.plist */,
 				621F1C80233B583100B0D2F5 /* EOS_Standards.xcdatamodeld */,
+				621F1C91233B62B100B0D2F5 /* GoogleService-Info.plist */,
+				621F1C93233B638E00B0D2F5 /* rr.png */,
 			);
 			path = "EOS Standards";
+			sourceTree = "<group>";
+		};
+		621F1C98233B6C6F00B0D2F5 /* Login and Registry */ = {
+			isa = PBXGroup;
+			children = (
+				621F1C94233B656200B0D2F5 /* LogInViewController.swift */,
+				621F1C96233B69C300B0D2F5 /* registerViewController.swift */,
+				621F1C7B233B583100B0D2F5 /* ViewController.swift */,
+			);
+			path = "Login and Registry";
+			sourceTree = "<group>";
+		};
+		621F1CA1233B6D9500B0D2F5 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				621F1C99233B6D4C00B0D2F5 /* furnitureViewController.swift */,
+				621F1C9B233B6D6400B0D2F5 /* paintViewController.swift */,
+				621F1C9D233B6D6E00B0D2F5 /* safetyViewController.swift */,
+				621F1C9F233B6D8A00B0D2F5 /* mPandEViewController.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		7B9FEFDD89824E031EEF155F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2ACB19B16EC6C9CE76E14C1F /* Pods-EOS Standards.debug.xcconfig */,
+				3094F081B2365BD391B84C3A /* Pods-EOS Standards.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		80B1176975C154991C2EB986 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B18E07F079163B41C1946F2C /* Pods_EOS_Standards.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +140,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 621F1C8B233B583400B0D2F5 /* Build configuration list for PBXNativeTarget "EOS Standards" */;
 			buildPhases = (
+				4B0DE92C7E5080F351DF94D1 /* [CP] Check Pods Manifest.lock */,
 				621F1C70233B583000B0D2F5 /* Sources */,
 				621F1C71233B583000B0D2F5 /* Frameworks */,
 				621F1C72233B583000B0D2F5 /* Resources */,
+				CE3C860AD0DA3E4E17A00185 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,12 +194,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				621F1C87233B583400B0D2F5 /* LaunchScreen.storyboard in Resources */,
+				621F1C92233B62B100B0D2F5 /* GoogleService-Info.plist in Resources */,
 				621F1C84233B583400B0D2F5 /* Assets.xcassets in Resources */,
 				621F1C7F233B583100B0D2F5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4B0DE92C7E5080F351DF94D1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EOS Standards-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE3C860AD0DA3E4E17A00185 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EOS Standards/Pods-EOS Standards-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EOS Standards/Pods-EOS Standards-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EOS Standards/Pods-EOS Standards-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		621F1C70233B583000B0D2F5 /* Sources */ = {
@@ -144,7 +252,13 @@
 				621F1C82233B583100B0D2F5 /* EOS_Standards.xcdatamodeld in Sources */,
 				621F1C7C233B583100B0D2F5 /* ViewController.swift in Sources */,
 				621F1C78233B583100B0D2F5 /* AppDelegate.swift in Sources */,
+				621F1CA0233B6D8A00B0D2F5 /* mPandEViewController.swift in Sources */,
+				621F1C97233B69C300B0D2F5 /* registerViewController.swift in Sources */,
+				621F1C9E233B6D6E00B0D2F5 /* safetyViewController.swift in Sources */,
+				621F1C9A233B6D4C00B0D2F5 /* furnitureViewController.swift in Sources */,
+				621F1C95233B656200B0D2F5 /* LogInViewController.swift in Sources */,
 				621F1C7A233B583100B0D2F5 /* SceneDelegate.swift in Sources */,
+				621F1C9C233B6D6400B0D2F5 /* paintViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +400,7 @@
 		};
 		621F1C8C233B583400B0D2F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ACB19B16EC6C9CE76E14C1F /* Pods-EOS Standards.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,6 +419,7 @@
 		};
 		621F1C8D233B583400B0D2F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3094F081B2365BD391B84C3A /* Pods-EOS Standards.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
