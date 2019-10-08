@@ -21,6 +21,7 @@
 		621F1C9C233B6D6400B0D2F5 /* paintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621F1C9B233B6D6400B0D2F5 /* paintViewController.swift */; };
 		621F1C9E233B6D6E00B0D2F5 /* safetyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621F1C9D233B6D6E00B0D2F5 /* safetyViewController.swift */; };
 		621F1CA0233B6D8A00B0D2F5 /* mPandEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621F1C9F233B6D8A00B0D2F5 /* mPandEViewController.swift */; };
+		621F1CA3233B792700B0D2F5 /* DetailFurnitureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621F1CA2233B792700B0D2F5 /* DetailFurnitureViewController.swift */; };
 		DD35F13C6ACC91AADA55F5F0 /* Pods_EOS_Standards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18E07F079163B41C1946F2C /* Pods_EOS_Standards.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,8 @@
 		621F1C9B233B6D6400B0D2F5 /* paintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paintViewController.swift; sourceTree = "<group>"; };
 		621F1C9D233B6D6E00B0D2F5 /* safetyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = safetyViewController.swift; sourceTree = "<group>"; };
 		621F1C9F233B6D8A00B0D2F5 /* mPandEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mPandEViewController.swift; sourceTree = "<group>"; };
+		621F1CA2233B792700B0D2F5 /* DetailFurnitureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFurnitureViewController.swift; sourceTree = "<group>"; };
+		621F1CA4234C977800B0D2F5 /* EOS Standards.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "EOS Standards.entitlements"; sourceTree = "<group>"; };
 		B18E07F079163B41C1946F2C /* Pods_EOS_Standards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EOS_Standards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -80,9 +83,11 @@
 		621F1C76233B583100B0D2F5 /* EOS Standards */ = {
 			isa = PBXGroup;
 			children = (
+				621F1CA4234C977800B0D2F5 /* EOS Standards.entitlements */,
 				621F1C77233B583100B0D2F5 /* AppDelegate.swift */,
 				621F1C79233B583100B0D2F5 /* SceneDelegate.swift */,
 				621F1C7D233B583100B0D2F5 /* Main.storyboard */,
+				621F1CA2233B792700B0D2F5 /* DetailFurnitureViewController.swift */,
 				621F1C98233B6C6F00B0D2F5 /* Login and Registry */,
 				621F1CA1233B6D9500B0D2F5 /* Categories */,
 				621F1C83233B583400B0D2F5 /* Assets.xcassets */,
@@ -258,6 +263,7 @@
 				621F1C9A233B6D4C00B0D2F5 /* furnitureViewController.swift in Sources */,
 				621F1C95233B656200B0D2F5 /* LogInViewController.swift in Sources */,
 				621F1C7A233B583100B0D2F5 /* SceneDelegate.swift in Sources */,
+				621F1CA3233B792700B0D2F5 /* DetailFurnitureViewController.swift in Sources */,
 				621F1C9C233B6D6400B0D2F5 /* paintViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +409,7 @@
 			baseConfigurationReference = 2ACB19B16EC6C9CE76E14C1F /* Pods-EOS Standards.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "EOS Standards/EOS Standards.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JNXD3RZ8DN;
 				INFOPLIST_FILE = "EOS Standards/Info.plist";
@@ -422,6 +429,7 @@
 			baseConfigurationReference = 3094F081B2365BD391B84C3A /* Pods-EOS Standards.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "EOS Standards/EOS Standards.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JNXD3RZ8DN;
 				INFOPLIST_FILE = "EOS Standards/Info.plist";
