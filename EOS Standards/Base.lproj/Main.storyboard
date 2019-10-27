@@ -454,16 +454,54 @@
                         <outlet property="imageView" destination="uoP-CF-VGG" id="Uhj-Bn-VYQ"/>
                         <outlet property="ldcSwitch" destination="VNr-aC-aqX" id="6jR-YA-wRE"/>
                         <outlet property="modulesSwitch" destination="J55-PN-H1q" id="3Za-EF-rjd"/>
+                        <outlet property="nextButton" destination="DNf-Ma-1jw" id="KeX-w6-I6N"/>
                         <outlet property="officeSwitch" destination="y3h-jQ-Gwd" id="JEy-qN-FJG"/>
                         <outlet property="osanddSwitch" destination="2PB-g8-QU8" id="xVf-9O-VyA"/>
                         <outlet property="productDetails" destination="3fy-lx-pov" id="i3x-tb-ENZ"/>
                         <outlet property="productSupplier" destination="wth-hy-MwJ" id="5s7-zs-8OW"/>
                         <outlet property="productTitle" destination="De5-UR-KVe" id="hbZ-Jd-2Yt"/>
+                        <segue destination="lW9-f0-YyN" kind="show" identifier="furnitureDoneSegue" id="uiS-vO-WeC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V5k-lR-A9C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="937.68115942028987" y="1482.5892857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="y9U-5L-I7Z">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="lW9-f0-YyN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E6H-dM-cWi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You did it!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsX-rM-MgY">
+                                <rect key="frame" x="125.5" y="397.5" width="163" height="47"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KST-HN-KzG">
+                                <rect key="frame" x="62" y="554" width="290" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Back to Furniture"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="KST-HN-KzG" firstAttribute="top" secondItem="NsX-rM-MgY" secondAttribute="bottom" constant="109.5" id="44y-7q-5ww"/>
+                            <constraint firstItem="NsX-rM-MgY" firstAttribute="centerX" secondItem="E6H-dM-cWi" secondAttribute="centerX" id="Jdt-Nb-Flt"/>
+                            <constraint firstItem="KST-HN-KzG" firstAttribute="centerX" secondItem="NsX-rM-MgY" secondAttribute="centerX" id="Mnd-Nx-kzh"/>
+                            <constraint firstItem="NsX-rM-MgY" firstAttribute="centerY" secondItem="E6H-dM-cWi" secondAttribute="centerY" id="aVj-7R-83g"/>
+                            <constraint firstItem="KST-HN-KzG" firstAttribute="leading" secondItem="ojW-Pg-PJd" secondAttribute="leading" constant="62" id="bjt-fd-CPO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ojW-Pg-PJd"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oRU-39-kQy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ui-RE-i8i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="937.68115942028987" y="2184.375"/>
         </scene>
         <!--Machines, Plant and Equipment-->
         <scene sceneID="VqB-Ol-BPy">

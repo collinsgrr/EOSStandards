@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class DetailFurnitureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -19,6 +20,7 @@ class DetailFurnitureViewController: UIViewController, UIImagePickerControllerDe
     @IBOutlet weak var enginesSwitch: UISwitch!
     @IBOutlet weak var ldcSwitch: UISwitch!
     @IBOutlet weak var modulesSwitch: UISwitch!
+    @IBOutlet weak var nextButton: UIButton!
     
     var imagePicker = UIImagePickerController()
     
@@ -53,7 +55,28 @@ class DetailFurnitureViewController: UIViewController, UIImagePickerControllerDe
     }
     
     @IBAction func nextTapped(_ sender: Any) {
-    
+        
+        nextButton.isEnabled = false
+        
+        let imagesFolder = Storage.storage().reference().child("images")
+               
+        let imageData = imageView.image!.jpegData(compressionQuality: 0.1)!
+               
+        imagesFolder.child("\(NSUUID().uuidString).jpg").putData(imageData, metadata: nil) { (metadata, error) in
+        print ("we tried to upload")
+            if error != nil {
+                            print("we had an error: \(String(describing: error))")
+            } else {
+                    self.performSegue(withIdentifier: "furnitureDoneSegue", sender: nil)
+                   }
+               }
+   
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+       
+        
+    }
+    
 }
