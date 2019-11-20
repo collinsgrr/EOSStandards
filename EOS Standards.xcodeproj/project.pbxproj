@@ -81,6 +81,7 @@
 				621F1C77233B583100B0D2F5 /* AppDelegate.swift */,
 				621F1C79233B583100B0D2F5 /* SceneDelegate.swift */,
 				621F1C7D233B583100B0D2F5 /* Main.storyboard */,
+				624E9FE523856020002D207F /* Models */,
 				621F1C98233B6C6F00B0D2F5 /* Login and Registry */,
 				621F1CA1233B6D9500B0D2F5 /* areaSelected */,
 				621F1C83233B583400B0D2F5 /* Assets.xcassets */,
@@ -110,6 +111,13 @@
 				621F1CA2233B792700B0D2F5 /* DetailFurnitureViewController.swift */,
 			);
 			path = areaSelected;
+			sourceTree = "<group>";
+		};
+		624E9FE523856020002D207F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		7B9FEFDD89824E031EEF155F /* Pods */ = {
