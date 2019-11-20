@@ -10,6 +10,7 @@ import UIKit
 
 class furnitureViewController: UIViewController{ //UITableViewDelegate, UITableViewDataSource{
     
+    var categoryNameValue: String? = ""
     
     
     //func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -20,11 +21,12 @@ class furnitureViewController: UIViewController{ //UITableViewDelegate, UITableV
     //
     //}
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        categoryNameLabel?.text = categoryNameValue
     }
     
     
@@ -33,4 +35,7 @@ class furnitureViewController: UIViewController{ //UITableViewDelegate, UITableV
     }
     
 
+    @IBOutlet weak var categoryNameLabel: UILabel!
+    
+    
 }

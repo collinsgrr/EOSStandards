@@ -33,6 +33,10 @@ class registerViewController: UIViewController {
                 print("An error occured")
             } else {
                 print("Registered successfully")
+                Database.database().reference().child("users").child(NSUUID().uuidString).child("e-mail").setValue(self.fullEmail)
+                
+                
+                
                 Auth.auth().signIn(withEmail: self.fullEmail, password: "eospl123", completion:
                     { (user, error) in
                         print("We tried to sign in")

@@ -12,7 +12,8 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var category = ["Furniture","Machines, Plant and Equipment","Paint","Safety Equipment"]
-
+    var senderSelected: String = ""
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return category.count
     }
@@ -29,7 +30,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         performSegue(withIdentifier: "furnitureSegue", sender: area)
     } else {
         if category[indexPath.row] == "Machines, Plant and Equipment"{
-            performSegue(withIdentifier: "mpandeSegue", sender: area)
+            performSegue(withIdentifier: "mpandlSegue", sender: area)
         } else{
             if category[indexPath.row] == "Paint"{
                 performSegue(withIdentifier: "paintSegue", sender: area)
@@ -38,6 +39,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
             }
         }
+        senderSelected = area
+        print(area)
     }
     
     @IBOutlet weak var tableView: UITableView!
@@ -51,6 +54,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
 
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "furnitureSegue"){
+                let displayVC = segue.destination as? furnitureViewController
+            displayVC!.categoryNameValue = "Furniture"
+        }else{
+            if(segue.identifier == "mpandlSegue"){
+                    let displayVC = segue.destination as? furnitureViewController
+                displayVC!.categoryNameValue = "Machines, Plant and Equip"
+            }else{
+                if(segue.identifier == "paintSegue"){
+                        let displayVC = segue.destination as? furnitureViewController
+                    displayVC!.categoryNameValue = "Paint"
+                }else{
+                    if(segue.identifier == "safetySegue"){
+                            let displayVC = segue.destination as? furnitureViewController
+                        displayVC!.categoryNameValue = "Safety Equipment"
+                        }
+                    }
+            }
+        }
+    }
 }
-

@@ -18,9 +18,6 @@
 		621F1C95233B656200B0D2F5 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621F1C94233B656200B0D2F5 /* LogInViewController.swift */; };
 		621F1C97233B69C300B0D2F5 /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621F1C96233B69C300B0D2F5 /* registerViewController.swift */; };
 		621F1C9A233B6D4C00B0D2F5 /* furnitureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621F1C99233B6D4C00B0D2F5 /* furnitureViewController.swift */; };
-		621F1C9C233B6D6400B0D2F5 /* paintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621F1C9B233B6D6400B0D2F5 /* paintViewController.swift */; };
-		621F1C9E233B6D6E00B0D2F5 /* safetyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621F1C9D233B6D6E00B0D2F5 /* safetyViewController.swift */; };
-		621F1CA0233B6D8A00B0D2F5 /* mPandEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621F1C9F233B6D8A00B0D2F5 /* mPandEViewController.swift */; };
 		621F1CA3233B792700B0D2F5 /* DetailFurnitureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621F1CA2233B792700B0D2F5 /* DetailFurnitureViewController.swift */; };
 		DD35F13C6ACC91AADA55F5F0 /* Pods_EOS_Standards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18E07F079163B41C1946F2C /* Pods_EOS_Standards.framework */; };
 /* End PBXBuildFile section */
@@ -42,9 +39,6 @@
 		621F1C94233B656200B0D2F5 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		621F1C96233B69C300B0D2F5 /* registerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
 		621F1C99233B6D4C00B0D2F5 /* furnitureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = furnitureViewController.swift; sourceTree = "<group>"; };
-		621F1C9B233B6D6400B0D2F5 /* paintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paintViewController.swift; sourceTree = "<group>"; };
-		621F1C9D233B6D6E00B0D2F5 /* safetyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = safetyViewController.swift; sourceTree = "<group>"; };
-		621F1C9F233B6D8A00B0D2F5 /* mPandEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mPandEViewController.swift; sourceTree = "<group>"; };
 		621F1CA2233B792700B0D2F5 /* DetailFurnitureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFurnitureViewController.swift; sourceTree = "<group>"; };
 		621F1CA4234C977800B0D2F5 /* EOS Standards.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "EOS Standards.entitlements"; sourceTree = "<group>"; };
 		B18E07F079163B41C1946F2C /* Pods_EOS_Standards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EOS_Standards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,9 +81,8 @@
 				621F1C77233B583100B0D2F5 /* AppDelegate.swift */,
 				621F1C79233B583100B0D2F5 /* SceneDelegate.swift */,
 				621F1C7D233B583100B0D2F5 /* Main.storyboard */,
-				621F1CA2233B792700B0D2F5 /* DetailFurnitureViewController.swift */,
 				621F1C98233B6C6F00B0D2F5 /* Login and Registry */,
-				621F1CA1233B6D9500B0D2F5 /* Categories */,
+				621F1CA1233B6D9500B0D2F5 /* areaSelected */,
 				621F1C83233B583400B0D2F5 /* Assets.xcassets */,
 				621F1C85233B583400B0D2F5 /* LaunchScreen.storyboard */,
 				621F1C88233B583400B0D2F5 /* Info.plist */,
@@ -110,15 +103,13 @@
 			path = "Login and Registry";
 			sourceTree = "<group>";
 		};
-		621F1CA1233B6D9500B0D2F5 /* Categories */ = {
+		621F1CA1233B6D9500B0D2F5 /* areaSelected */ = {
 			isa = PBXGroup;
 			children = (
 				621F1C99233B6D4C00B0D2F5 /* furnitureViewController.swift */,
-				621F1C9B233B6D6400B0D2F5 /* paintViewController.swift */,
-				621F1C9D233B6D6E00B0D2F5 /* safetyViewController.swift */,
-				621F1C9F233B6D8A00B0D2F5 /* mPandEViewController.swift */,
+				621F1CA2233B792700B0D2F5 /* DetailFurnitureViewController.swift */,
 			);
-			path = Categories;
+			path = areaSelected;
 			sourceTree = "<group>";
 		};
 		7B9FEFDD89824E031EEF155F /* Pods */ = {
@@ -257,14 +248,11 @@
 				621F1C82233B583100B0D2F5 /* EOS_Standards.xcdatamodeld in Sources */,
 				621F1C7C233B583100B0D2F5 /* ViewController.swift in Sources */,
 				621F1C78233B583100B0D2F5 /* AppDelegate.swift in Sources */,
-				621F1CA0233B6D8A00B0D2F5 /* mPandEViewController.swift in Sources */,
 				621F1C97233B69C300B0D2F5 /* registerViewController.swift in Sources */,
-				621F1C9E233B6D6E00B0D2F5 /* safetyViewController.swift in Sources */,
 				621F1C9A233B6D4C00B0D2F5 /* furnitureViewController.swift in Sources */,
 				621F1C95233B656200B0D2F5 /* LogInViewController.swift in Sources */,
 				621F1C7A233B583100B0D2F5 /* SceneDelegate.swift in Sources */,
 				621F1CA3233B792700B0D2F5 /* DetailFurnitureViewController.swift in Sources */,
-				621F1C9C233B6D6400B0D2F5 /* paintViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
