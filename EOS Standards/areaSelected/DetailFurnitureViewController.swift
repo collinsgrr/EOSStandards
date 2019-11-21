@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 import FirebaseDatabase
 
 
@@ -22,7 +23,8 @@ class DetailFurnitureViewController: UIViewController, UIImagePickerControllerDe
     var engines : NSNumber = 0
     var modules : NSNumber = 0
     var ldc : NSNumber = 0
-    
+    var imageURL : String = ""
+    var cardImageURL : NSString = ""
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var productTitle: UITextField!
@@ -125,30 +127,48 @@ class DetailFurnitureViewController: UIViewController, UIImagePickerControllerDe
         
         nextButton.isEnabled = false
         
-        let imagesFolder = Storage.storage().reference().child("images")
+        let imagesFolder = Storage.storage().reference().child("images").child("\(NSUUID().uuidString).jpg")
                
         let imageData = imageView.image!.jpegData(compressionQuality: 0.1)!
-               
-        imagesFolder.child("\(NSUUID().uuidString).jpg").putData(imageData, metadata: nil) { (metadata, error) in
-        print ("we tried to upload")
+        
+        imagesFolder.putData(imageData, metadata: nil) { (metadata, error) in
+            print ("we tried to upload")
+            guard metadata != nil else {
+                return
+            }
             if error != nil {
                             print("we had an error: \(String(describing: error))")
             } else {
-                    self.performSegue(withIdentifier: "furnitureDoneSegue", sender: nil)
-                   }
-               }
+                imagesFolder.downloadURL { (url, error) in
+                    self.imageURL = url!.absoluteString
+                    print(self.imageURL)
+                    print("1")
+                    self.performSegue(withIdentifier: "furnitureDoneSegue", sender: self.imageURL)
+                }
+            }
+        }
+        print("2")
 
         prodTitle = productTitle.text! as NSString
         prodDetails = productDetails.text! as NSString
         prodSupplier = productSupplier.text! as NSString
         
-        let card = ["name": prodTitle , "description" : prodDetails ,"supplier":prodSupplier ,"officeBool":office ,"enginesBool":engines ,"modulesBool":modules ,"osdBool":osd,"ldcBool":ldc] as NSDictionary
-        Database.database().reference().child(categoryNameValue!).child("Cards").child(productTitle.text!).setValue(card)
-        
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
-    
+        if(segue.identifier == "furnitureDoneSegue"){
+                let displayVC = segue.destination as? DoneViewController
+            displayVC!.categoryNameValue = categoryNameValue!
+            displayVC!.prodTitle = prodTitle
+            displayVC!.prodSupplier = prodSupplier
+            displayVC!.prodDetails = prodDetails
+            displayVC!.office = office
+            displayVC!.osd = osd
+            displayVC!.engines = engines
+            displayVC!.modules = modules
+            displayVC!.ldc = ldc
+            displayVC!.imageURL = sender as! String
+
+}
+}
 }

@@ -13,15 +13,16 @@ import FirebaseDatabase
 
 class Card {
 
-var name = ""
-var photoURL = ""
-var description = ""
-var supplier = ""
-var officeBool : NSNumber = 0
-var enginesBool : NSNumber = 0
-var modulesBool : NSNumber = 0
-var osdBool : NSNumber = 0
-var ldcBool : NSNumber = 0
+    var prodTitle : NSString = ""
+    var photoURL : NSString = ""
+    var prodDetails : NSString = ""
+    var prodSupplier: NSString = ""
+    var officeBool : NSNumber = 0
+    var enginesBool : NSNumber = 0
+    var modulesBool : NSNumber = 0
+    var osdBool : NSNumber = 0
+    var ldcBool : NSNumber = 0
+    var imageURL : NSString = ""
 }
 
 class furnitureViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
@@ -30,6 +31,14 @@ class furnitureViewController: UIViewController, UITableViewDelegate, UITableVie
     var cards : [Card] = []
     var ref: DatabaseReference!
     var cardSelectedValue : String? = ""
+    var cardDescription : String? = ""
+    var cardSupplier : String? = ""
+    var cardOfficeBool : NSNumber = 0
+    var cardEnginesBool : NSNumber = 0
+    var cardModulesBool : NSNumber = 0
+    var cardOSDBool : NSNumber = 0
+    var cardLDCBool : NSNumber = 0
+    var cardImageURL : String = ""
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -55,7 +64,16 @@ class furnitureViewController: UIViewController, UITableViewDelegate, UITableVie
             
             let card = Card()
             let value = DataSnapshot.value! as! NSDictionary
-            card.name = value["name"] as? String ?? ""
+            card.prodTitle = value["name"] as! NSString
+            card.prodDetails = value["description"] as! NSString
+            card.prodSupplier = value["supplier"] as! NSString
+            card.osdBool = value["osdBool"] as! NSNumber
+            card.officeBool = value["officeBool"] as! NSNumber
+            card.ldcBool = value["ldcBool"] as! NSNumber
+            card.enginesBool = value["enginesBool"] as! NSNumber
+            card.modulesBool = value["modulesBool"] as! NSNumber
+            card.imageURL = value["imageURL"] as! NSString
+            
     
             self.cards.append(card)
             self.tableView.reloadData()
@@ -74,15 +92,24 @@ class furnitureViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = UITableViewCell()
         
         let card = cards[indexPath.row]
-        cell.textLabel?.text = card.name
+        cell.textLabel?.text = card.prodTitle as String
         
     return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let card = cards[indexPath.row]
-        cardSelectedValue = card.name
-        performSegue(withIdentifier: "cardViewSegue", sender: card.name)
+        cardSelectedValue = card.prodTitle as String
+        cardDescription = card.prodDetails as String
+        cardSupplier = card.prodSupplier as String
+        cardOfficeBool = card.officeBool
+        cardEnginesBool = card.enginesBool
+        cardModulesBool = card.modulesBool
+        cardOSDBool = card.osdBool
+        cardLDCBool = card.ldcBool
+        cardImageURL = card.imageURL as String
+        
+        performSegue(withIdentifier: "cardViewSegue", sender: card.prodTitle)
         
     }
     
@@ -93,7 +120,7 @@ class furnitureViewController: UIViewController, UITableViewDelegate, UITableVie
                 
                 let card = Card()
                 let value = DataSnapshot.value! as! NSDictionary
-                card.name = value["name"] as? String ?? ""
+            card.prodTitle = value["name"] as! NSString 
                 
         
                 self.cards.append(card)
@@ -118,6 +145,24 @@ class furnitureViewController: UIViewController, UITableViewDelegate, UITableVie
                let displayVC = segue.destination as? cardViewController
         displayVC!.categoryNameValue = categoryNameValue!
         displayVC!.cardNameValue = cardSelectedValue!
+        displayVC!.cardDescriptionValue = cardDescription!
+        displayVC!.cardSupplierValue = cardSupplier!
+        displayVC!.cardOfficeBoolValue = cardOfficeBool
+        displayVC!.cardEnginesBoolValue = cardEnginesBool
+        displayVC!.cardModulesBoolValue = cardModulesBool
+        displayVC!.cardOSDBoolValue = cardOSDBool
+        displayVC!.cardLDCBoolValue = cardLDCBool
+        displayVC!.cardImageURL = cardImageURL
+        print(categoryNameValue!)
+        print(cardSelectedValue!)
+        print(cardDescription!)
+        print(cardSupplier!)
+        print(cardOfficeBool)
+        print(cardEnginesBool)
+        print(cardModulesBool)
+        print(cardOSDBool)
+        print(cardLDCBool)
+        print(cardImageURL)
        }else{
         if(categoryNameValue == "Furniture"){
                 let displayVC = segue.destination as? DetailFurnitureViewController

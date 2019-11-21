@@ -287,7 +287,7 @@
                         <outlet property="categoryNameLabel" destination="3oz-6P-pmj" id="YzA-FV-qTh"/>
                         <outlet property="tableView" destination="RCS-dl-IbL" id="R8l-qF-VQa"/>
                         <segue destination="eCU-g4-Btf" kind="show" identifier="furnitureDetailSegue" id="yio-hI-YN3"/>
-                        <segue destination="rqW-rV-92V" kind="show" identifier="cardViewSegue" id="KC9-WA-sFf"/>
+                        <segue destination="rqW-rV-92V" kind="show" identifier="cardViewSegue" id="nVb-Xm-lBd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Fl-3k-5n0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -556,10 +556,10 @@
             </objects>
             <point key="canvasLocation" x="-930" y="108"/>
         </scene>
-        <!--Add Furniture-->
+        <!--Card View Controller-->
         <scene sceneID="s0n-Te-WGO">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="rqW-rV-92V" customClass="cardViewController" customModule="EOS_Standards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="rqW-rV-92V" userLabel="Card View Controller" customClass="cardViewController" customModule="EOS_Standards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s48-Y7-InV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -577,7 +577,7 @@
                                     <constraint firstAttribute="height" constant="32" id="AsC-hW-707"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="Next"/>
+                                <state key="normal" title="Edit"/>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0fw-6e-7sX">
                                 <rect key="frame" x="213" y="91" width="181" height="34"/>
@@ -654,10 +654,18 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="T41-Qs-Ged">
                                 <rect key="frame" x="294" y="405" width="51" height="31"/>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6R-OV-Y0L">
+                                <rect key="frame" x="168" y="695" width="78" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="2CD-wA-4pY" firstAttribute="centerY" secondItem="T41-Qs-Ged" secondAttribute="centerY" id="1b3-L5-zhG"/>
+                            <constraint firstItem="Y6R-OV-Y0L" firstAttribute="leading" secondItem="U3C-9a-RGv" secondAttribute="leading" constant="168" id="2JP-s6-6hF"/>
                             <constraint firstItem="U3C-9a-RGv" firstAttribute="trailing" secondItem="0fw-6e-7sX" secondAttribute="trailing" constant="20" id="4UN-fj-fvO"/>
                             <constraint firstItem="srA-hk-hYd" firstAttribute="leading" secondItem="4Tp-GF-eKM" secondAttribute="trailing" constant="33" id="59S-Zu-vgn"/>
                             <constraint firstItem="U3C-9a-RGv" firstAttribute="bottom" secondItem="C8Z-oT-guQ" secondAttribute="bottom" constant="50" id="5d7-Cq-WUq"/>
@@ -665,11 +673,13 @@
                             <constraint firstItem="wgV-Qf-PGT" firstAttribute="trailing" secondItem="U3C-9a-RGv" secondAttribute="trailing" id="5z8-7c-9yR"/>
                             <constraint firstItem="0fw-6e-7sX" firstAttribute="trailing" secondItem="s48-Y7-InV" secondAttribute="trailingMargin" id="6cA-Gc-TSg"/>
                             <constraint firstItem="zgP-iq-z2K" firstAttribute="baseline" secondItem="2CD-wA-4pY" secondAttribute="baseline" id="6en-Zu-ze3"/>
+                            <constraint firstItem="C8Z-oT-guQ" firstAttribute="top" secondItem="Y6R-OV-Y0L" secondAttribute="bottom" constant="39" id="88k-tF-lu3"/>
                             <constraint firstItem="Rhb-ub-N3q" firstAttribute="leading" secondItem="s48-Y7-InV" secondAttribute="leadingMargin" id="A3L-PW-tan"/>
                             <constraint firstItem="0fw-6e-7sX" firstAttribute="top" secondItem="wgV-Qf-PGT" secondAttribute="bottom" constant="8" id="B0l-BN-JU9"/>
                             <constraint firstItem="0fw-6e-7sX" firstAttribute="trailing" secondItem="2vU-zx-TMx" secondAttribute="trailing" id="BD4-VV-wT3"/>
                             <constraint firstItem="T41-Qs-Ged" firstAttribute="leading" secondItem="2CD-wA-4pY" secondAttribute="trailing" constant="12.5" id="CWD-8c-lJG"/>
                             <constraint firstItem="srA-hk-hYd" firstAttribute="leading" secondItem="T41-Qs-Ged" secondAttribute="leading" id="DAM-nu-6EO"/>
+                            <constraint firstItem="U3C-9a-RGv" firstAttribute="trailing" secondItem="Y6R-OV-Y0L" secondAttribute="trailing" constant="168" id="GFv-JB-zJM"/>
                             <constraint firstItem="39m-p0-0Qe" firstAttribute="top" secondItem="Rhb-ub-N3q" secondAttribute="bottom" constant="18.5" id="IFF-b1-9aW"/>
                             <constraint firstItem="f0g-Zf-pSh" firstAttribute="trailing" secondItem="zgP-iq-z2K" secondAttribute="trailing" id="Iq3-1Z-njd"/>
                             <constraint firstItem="wgV-Qf-PGT" firstAttribute="top" secondItem="U3C-9a-RGv" secondAttribute="top" constant="10" id="KNQ-rJ-eA6"/>
@@ -678,6 +688,7 @@
                             <constraint firstItem="f0g-Zf-pSh" firstAttribute="leading" secondItem="zgP-iq-z2K" secondAttribute="leading" id="Pk7-0f-ROt"/>
                             <constraint firstItem="2vU-zx-TMx" firstAttribute="leading" secondItem="gvn-Ue-Qn0" secondAttribute="leading" id="QhR-Xb-sCh"/>
                             <constraint firstItem="39m-p0-0Qe" firstAttribute="leading" secondItem="2L5-Rq-rw3" secondAttribute="leading" id="SFa-GC-MGn"/>
+                            <constraint firstItem="Y6R-OV-Y0L" firstAttribute="leading" secondItem="Tda-k2-YiU" secondAttribute="trailing" constant="-9" id="UgS-De-RqW"/>
                             <constraint firstItem="2L5-Rq-rw3" firstAttribute="top" secondItem="39m-p0-0Qe" secondAttribute="bottom" constant="2.5" id="V4U-Yj-7eA"/>
                             <constraint firstItem="kwJ-NH-fAl" firstAttribute="leading" secondItem="U3C-9a-RGv" secondAttribute="leading" id="XHR-H8-GD7"/>
                             <constraint firstItem="2vU-zx-TMx" firstAttribute="trailing" secondItem="gvn-Ue-Qn0" secondAttribute="trailing" id="anu-yO-t3J"/>
@@ -694,6 +705,7 @@
                             <constraint firstItem="gvn-Ue-Qn0" firstAttribute="top" secondItem="2vU-zx-TMx" secondAttribute="bottom" constant="8" id="qYz-1R-Nx1"/>
                             <constraint firstItem="4Tp-GF-eKM" firstAttribute="centerY" secondItem="srA-hk-hYd" secondAttribute="centerY" id="r6K-Ar-SDP"/>
                             <constraint firstItem="U3C-9a-RGv" firstAttribute="trailing" secondItem="Rhb-ub-N3q" secondAttribute="trailing" constant="74.5" id="ru3-Jv-SKg"/>
+                            <constraint firstItem="Y6R-OV-Y0L" firstAttribute="leading" secondItem="U3C-9a-RGv" secondAttribute="leading" constant="168" id="s6D-OL-Wt3"/>
                             <constraint firstItem="zgP-iq-z2K" firstAttribute="leading" secondItem="FeD-2M-4Ey" secondAttribute="leading" id="uuM-Zy-QsT"/>
                             <constraint firstItem="Rhb-ub-N3q" firstAttribute="top" secondItem="kwJ-NH-fAl" secondAttribute="bottom" constant="30" id="vRI-pQ-uwv"/>
                             <constraint firstItem="FeD-2M-4Ey" firstAttribute="centerY" secondItem="Tda-k2-YiU" secondAttribute="centerY" id="vhj-qd-anx"/>
@@ -707,18 +719,21 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add Furniture" id="Vdq-qj-EMZ">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="camera" id="Kkt-Sy-eFj">
-                                <connections>
-                                    <action selector="cameraTapped:" destination="rqW-rV-92V" id="RI5-nw-DS5"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="organize" id="FSw-Pe-kXb">
-                                <connections>
-                                    <action selector="fileTapped:" destination="rqW-rV-92V" id="nSt-vF-YSK"/>
-                                </connections>
-                            </barButtonItem>
+                            <barButtonItem systemItem="camera" id="Kkt-Sy-eFj"/>
+                            <barButtonItem systemItem="organize" id="FSw-Pe-kXb"/>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="enginesBoolSwitch" destination="2L5-Rq-rw3" id="xGt-z8-Byi"/>
+                        <outlet property="ldcBoolSwitch" destination="T41-Qs-Ged" id="vqV-Qc-vB6"/>
+                        <outlet property="modulesBoolSwitch" destination="Tda-k2-YiU" id="3w1-Ze-kx1"/>
+                        <outlet property="officeBoolSwitch" destination="39m-p0-0Qe" id="hBA-17-9W3"/>
+                        <outlet property="osdBoolSwitch" destination="srA-hk-hYd" id="WSC-BY-moh"/>
+                        <outlet property="productDetails" destination="2vU-zx-TMx" id="rqd-W5-mX6"/>
+                        <outlet property="productSupplier" destination="gvn-Ue-Qn0" id="Y2R-nq-PVE"/>
+                        <outlet property="productTitle" destination="0fw-6e-7sX" id="cLZ-pb-ivE"/>
+                        <outlet property="viewCardImage" destination="kwJ-NH-fAl" id="D4O-zO-TBX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UIe-90-gzk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
