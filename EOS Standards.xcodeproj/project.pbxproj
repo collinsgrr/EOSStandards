@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6218D9BF2386A294003772A1 /* cardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6218D9BE2386A294003772A1 /* cardViewController.swift */; };
 		621F1C78233B583100B0D2F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621F1C77233B583100B0D2F5 /* AppDelegate.swift */; };
 		621F1C7A233B583100B0D2F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621F1C79233B583100B0D2F5 /* SceneDelegate.swift */; };
 		621F1C7C233B583100B0D2F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621F1C7B233B583100B0D2F5 /* ViewController.swift */; };
@@ -19,12 +20,14 @@
 		621F1C97233B69C300B0D2F5 /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621F1C96233B69C300B0D2F5 /* registerViewController.swift */; };
 		621F1C9A233B6D4C00B0D2F5 /* furnitureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621F1C99233B6D4C00B0D2F5 /* furnitureViewController.swift */; };
 		621F1CA3233B792700B0D2F5 /* DetailFurnitureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621F1CA2233B792700B0D2F5 /* DetailFurnitureViewController.swift */; };
+		624E9FE72386962B002D207F /* DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624E9FE62386962A002D207F /* DoneViewController.swift */; };
 		DD35F13C6ACC91AADA55F5F0 /* Pods_EOS_Standards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18E07F079163B41C1946F2C /* Pods_EOS_Standards.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2ACB19B16EC6C9CE76E14C1F /* Pods-EOS Standards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EOS Standards.debug.xcconfig"; path = "Target Support Files/Pods-EOS Standards/Pods-EOS Standards.debug.xcconfig"; sourceTree = "<group>"; };
 		3094F081B2365BD391B84C3A /* Pods-EOS Standards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EOS Standards.release.xcconfig"; path = "Target Support Files/Pods-EOS Standards/Pods-EOS Standards.release.xcconfig"; sourceTree = "<group>"; };
+		6218D9BE2386A294003772A1 /* cardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardViewController.swift; sourceTree = "<group>"; };
 		621F1C74233B583100B0D2F5 /* EOS Standards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EOS Standards.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		621F1C77233B583100B0D2F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		621F1C79233B583100B0D2F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +44,7 @@
 		621F1C99233B6D4C00B0D2F5 /* furnitureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = furnitureViewController.swift; sourceTree = "<group>"; };
 		621F1CA2233B792700B0D2F5 /* DetailFurnitureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFurnitureViewController.swift; sourceTree = "<group>"; };
 		621F1CA4234C977800B0D2F5 /* EOS Standards.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "EOS Standards.entitlements"; sourceTree = "<group>"; };
+		624E9FE62386962A002D207F /* DoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneViewController.swift; sourceTree = "<group>"; };
 		B18E07F079163B41C1946F2C /* Pods_EOS_Standards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EOS_Standards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -77,14 +81,14 @@
 		621F1C76233B583100B0D2F5 /* EOS Standards */ = {
 			isa = PBXGroup;
 			children = (
-				621F1CA4234C977800B0D2F5 /* EOS Standards.entitlements */,
-				621F1C77233B583100B0D2F5 /* AppDelegate.swift */,
-				621F1C79233B583100B0D2F5 /* SceneDelegate.swift */,
 				621F1C7D233B583100B0D2F5 /* Main.storyboard */,
 				624E9FE523856020002D207F /* Models */,
 				621F1C98233B6C6F00B0D2F5 /* Login and Registry */,
 				621F1CA1233B6D9500B0D2F5 /* areaSelected */,
 				621F1C83233B583400B0D2F5 /* Assets.xcassets */,
+				621F1CA4234C977800B0D2F5 /* EOS Standards.entitlements */,
+				621F1C77233B583100B0D2F5 /* AppDelegate.swift */,
+				621F1C79233B583100B0D2F5 /* SceneDelegate.swift */,
 				621F1C85233B583400B0D2F5 /* LaunchScreen.storyboard */,
 				621F1C88233B583400B0D2F5 /* Info.plist */,
 				621F1C80233B583100B0D2F5 /* EOS_Standards.xcdatamodeld */,
@@ -109,6 +113,8 @@
 			children = (
 				621F1C99233B6D4C00B0D2F5 /* furnitureViewController.swift */,
 				621F1CA2233B792700B0D2F5 /* DetailFurnitureViewController.swift */,
+				624E9FE62386962A002D207F /* DoneViewController.swift */,
+				6218D9BE2386A294003772A1 /* cardViewController.swift */,
 			);
 			path = areaSelected;
 			sourceTree = "<group>";
@@ -259,7 +265,9 @@
 				621F1C97233B69C300B0D2F5 /* registerViewController.swift in Sources */,
 				621F1C9A233B6D4C00B0D2F5 /* furnitureViewController.swift in Sources */,
 				621F1C95233B656200B0D2F5 /* LogInViewController.swift in Sources */,
+				6218D9BF2386A294003772A1 /* cardViewController.swift in Sources */,
 				621F1C7A233B583100B0D2F5 /* SceneDelegate.swift in Sources */,
+				624E9FE72386962B002D207F /* DoneViewController.swift in Sources */,
 				621F1CA3233B792700B0D2F5 /* DetailFurnitureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

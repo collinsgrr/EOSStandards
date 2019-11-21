@@ -28,11 +28,63 @@ class DetailFurnitureViewController: UIViewController, UIImagePickerControllerDe
     @IBOutlet weak var productTitle: UITextField!
     @IBOutlet weak var productDetails: UITextField!
     @IBOutlet weak var productSupplier: UITextField!
+     
     @IBOutlet weak var officeSwitch: UISwitch!
     @IBOutlet weak var osanddSwitch: UISwitch!
     @IBOutlet weak var enginesSwitch: UISwitch!
     @IBOutlet weak var ldcSwitch: UISwitch!
     @IBOutlet weak var modulesSwitch: UISwitch!
+    
+    
+    @IBAction func officeTapped(_ sender: Any) {
+        if officeSwitch.isOn {
+            officeSwitch.setOn(true, animated:true)
+            print(office)
+        } else {
+            officeSwitch.setOn(false, animated:true)
+            office = 0
+        }
+    }
+    @IBAction func engineTapped(_ sender: Any) {
+        if enginesSwitch.isOn {
+                  enginesSwitch.setOn(true, animated:true)
+            engines = 1
+              } else {
+                  enginesSwitch.setOn(false, animated:true)
+            engines = 0
+              }
+    }
+    
+    @IBAction func modulesTapped(_ sender: Any) {
+       if modulesSwitch.isOn {
+            modulesSwitch.setOn(true, animated:true)
+        modules = 1
+        } else {
+            modulesSwitch.setOn(false, animated:true)
+        modules = 0
+        }
+    }
+    
+    @IBAction func osdTapped(_ sender: Any) {
+        if osanddSwitch.isOn {
+                osanddSwitch.setOn(true, animated:true)
+            osd = 1
+                     } else {
+                osanddSwitch.setOn(false, animated:true)
+            osd = 0
+                     }
+    }
+    
+    @IBAction func ldcTapped(_ sender: Any) {
+        if ldcSwitch.isOn {
+            ldcSwitch.setOn(true, animated:true)
+            ldc = 1
+        } else {
+           ldcSwitch.setOn(false, animated:true)
+            ldc = 0
+        }
+    }
+    
     @IBOutlet weak var nextButton: UIButton!
     
     var imagePicker = UIImagePickerController()
@@ -43,6 +95,7 @@ class DetailFurnitureViewController: UIViewController, UIImagePickerControllerDe
         imagePicker.delegate = self
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
+        nextButton.isEnabled = false
         // Do any additional setup after loading the view.
     }
     
@@ -53,6 +106,7 @@ class DetailFurnitureViewController: UIViewController, UIImagePickerControllerDe
 
         
         imagePicker.dismiss(animated: true, completion: nil)
+        nextButton.isEnabled = true
     }
     
     @IBAction func fileTapped(_ sender: Any) {
@@ -87,21 +141,13 @@ class DetailFurnitureViewController: UIViewController, UIImagePickerControllerDe
         prodTitle = productTitle.text! as NSString
         prodDetails = productDetails.text! as NSString
         prodSupplier = productSupplier.text! as NSString
-        office = NSNumber()
-        osd = 0
-        engines = 0
-        modules = 0
-        ldc = 0
         
-        
-        let card = ["name": prodTitle , "description" : prodDetails ,"supplier":prodSupplier ,"officeBool":officeSwitch ?? false,"enginesBool":enginesSwitch ?? false,"modulesBool":modulesSwitch ?? false,"osdBool":osanddSwitch ?? false,"ldcBool":ldcSwitch ?? false] as NSDictionary
-        Database.database().reference().child(categoryNameValue!).child("Cards").childByAutoId().setValue(card)
+        let card = ["name": prodTitle , "description" : prodDetails ,"supplier":prodSupplier ,"officeBool":office ,"enginesBool":engines ,"modulesBool":modules ,"osdBool":osd,"ldcBool":ldc] as NSDictionary
+        Database.database().reference().child(categoryNameValue!).child("Cards").child(productTitle.text!).setValue(card)
         
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-       
         
     }
     

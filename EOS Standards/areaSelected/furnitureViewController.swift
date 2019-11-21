@@ -17,11 +17,11 @@ var name = ""
 var photoURL = ""
 var description = ""
 var supplier = ""
-var officeBool = false
-var enginesBool = false
-var modulesBool = false
-var osdBool = false
-var ldcBool = false
+var officeBool : NSNumber = 0
+var enginesBool : NSNumber = 0
+var modulesBool : NSNumber = 0
+var osdBool : NSNumber = 0
+var ldcBool : NSNumber = 0
 }
 
 class furnitureViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
@@ -29,14 +29,24 @@ class furnitureViewController: UIViewController, UITableViewDelegate, UITableVie
     var categoryNameValue: String? = ""
     var cards : [Card] = []
     var ref: DatabaseReference!
+    var cardSelectedValue : String? = ""
 
     @IBOutlet weak var tableView: UITableView!
+    
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:
+                     #selector(furnitureViewController.handleRefresh(_:)),
+                                 for: UIControl.Event.valueChanged)
+        refreshControl.tintColor = UIColor.red
+        return refreshControl
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         categoryNameLabel.text = categoryNameValue
         // Do any additional setup after loading the view.
-        ref = Database.database().reference().child(categoryNameValue!)
+        ref = Database.database().reference().child(categoryNameValue!).child("Cards")
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -49,8 +59,10 @@ class furnitureViewController: UIViewController, UITableViewDelegate, UITableVie
     
             self.cards.append(card)
             self.tableView.reloadData()
+        
             
         }
+        self.tableView.addSubview(self.refreshControl)
         
     }
     
@@ -67,6 +79,33 @@ class furnitureViewController: UIViewController, UITableViewDelegate, UITableVie
     return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let card = cards[indexPath.row]
+        cardSelectedValue = card.name
+        performSegue(withIdentifier: "cardViewSegue", sender: card.name)
+        
+    }
+    
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        ref = Database.database().reference().child(categoryNameValue!).child("Cards")
+        self.ref.observe(DataEventType.childAdded) { (DataSnapshot) in
+                print(DataSnapshot)
+                
+                let card = Card()
+                let value = DataSnapshot.value! as! NSDictionary
+                card.name = value["name"] as? String ?? ""
+                
+        
+                self.cards.append(card)
+                self.tableView.reloadData()
+        
+        self.tableView.reloadData()
+            print("We refreshed")
+        refreshControl.endRefreshing()
+            print("We stopped refreshing")
+            }
+    }
+    
     @IBAction func plusTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "furnitureDetailSegue", sender: nil)
     }
@@ -75,6 +114,11 @@ class furnitureViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var categoryNameLabel: UILabel!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       if(segue.identifier == "cardViewSegue"){
+               let displayVC = segue.destination as? cardViewController
+        displayVC!.categoryNameValue = categoryNameValue!
+        displayVC!.cardNameValue = cardSelectedValue!
+       }else{
         if(categoryNameValue == "Furniture"){
                 let displayVC = segue.destination as? DetailFurnitureViewController
             displayVC!.categoryNameValue = "Furniture"
@@ -95,5 +139,5 @@ class furnitureViewController: UIViewController, UITableViewDelegate, UITableVie
             }
         }
     }
-    
+}
 }
