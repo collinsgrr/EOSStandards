@@ -25,6 +25,7 @@ class DetailFurnitureViewController: UIViewController, UIImagePickerControllerDe
     var ldc : NSNumber = 0
     var imageURL : String = ""
     var cardImageURL : NSString = ""
+    var uuid : NSString = NSUUID().uuidString as NSString
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var productTitle: UITextField!
@@ -127,7 +128,7 @@ class DetailFurnitureViewController: UIViewController, UIImagePickerControllerDe
         
         nextButton.isEnabled = false
         
-        let imagesFolder = Storage.storage().reference().child("images").child("\(NSUUID().uuidString).jpg")
+        let imagesFolder = Storage.storage().reference().child("images").child("\(uuid).jpg")
                
         let imageData = imageView.image!.jpegData(compressionQuality: 0.1)!
         
@@ -168,6 +169,7 @@ class DetailFurnitureViewController: UIViewController, UIImagePickerControllerDe
             displayVC!.modules = modules
             displayVC!.ldc = ldc
             displayVC!.imageURL = sender as! String
+            displayVC!.uuid = uuid
 
 }
 }

@@ -23,6 +23,7 @@ class Card {
     var osdBool : NSNumber = 0
     var ldcBool : NSNumber = 0
     var imageURL : NSString = ""
+    var uuid : NSString = ""
 }
 
 class furnitureViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
@@ -39,6 +40,7 @@ class furnitureViewController: UIViewController, UITableViewDelegate, UITableVie
     var cardOSDBool : NSNumber = 0
     var cardLDCBool : NSNumber = 0
     var cardImageURL : String = ""
+    var cardUUID : NSString = ""
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -73,6 +75,7 @@ class furnitureViewController: UIViewController, UITableViewDelegate, UITableVie
             card.enginesBool = value["enginesBool"] as! NSNumber
             card.modulesBool = value["modulesBool"] as! NSNumber
             card.imageURL = value["imageURL"] as! NSString
+            card.uuid = value["uuid"] as! NSString
             
     
             self.cards.append(card)
@@ -108,6 +111,7 @@ class furnitureViewController: UIViewController, UITableViewDelegate, UITableVie
         cardOSDBool = card.osdBool
         cardLDCBool = card.ldcBool
         cardImageURL = card.imageURL as String
+        cardUUID = card.uuid
         
         performSegue(withIdentifier: "cardViewSegue", sender: card.prodTitle)
         
@@ -122,8 +126,6 @@ class furnitureViewController: UIViewController, UITableViewDelegate, UITableVie
                 let value = DataSnapshot.value! as! NSDictionary
             card.prodTitle = value["name"] as! NSString 
                 
-        
-                self.cards.append(card)
                 self.tableView.reloadData()
         
         self.tableView.reloadData()
@@ -153,6 +155,7 @@ class furnitureViewController: UIViewController, UITableViewDelegate, UITableVie
         displayVC!.cardOSDBoolValue = cardOSDBool
         displayVC!.cardLDCBoolValue = cardLDCBool
         displayVC!.cardImageURL = cardImageURL
+        displayVC!.uuid = cardUUID
         print(categoryNameValue!)
         print(cardSelectedValue!)
         print(cardDescription!)

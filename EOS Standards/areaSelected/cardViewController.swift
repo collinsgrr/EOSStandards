@@ -11,7 +11,7 @@ import Firebase
 import FirebaseDatabase
 import SDWebImage
 
-class cardViewController: UIViewController {
+class cardViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     
     var cardNameValue : String = ""
     var categoryNameValue : String = ""
@@ -25,9 +25,24 @@ class cardViewController: UIViewController {
     var cardImageURL: String = ""
     var imageURL: String = ""
     var ref : DatabaseReference!
+    var delRef : DatabaseReference!
+       var prodTitle : NSString = ""
+       var prodDetails : NSString = ""
+       var prodSupplier : NSString = ""
+       var office : NSNumber = 0
+       var osd : NSNumber = 0
+       var engines : NSNumber = 0
+       var modules : NSNumber = 0
+       var ldc : NSNumber = 0
+    var uuid : NSString = NSUUID().uuidString as NSString
+
+     var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePicker.delegate = self
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
          ref = Database.database().reference().child(categoryNameValue).child("Cards").child(cardNameValue)
 
         productTitle.text = cardNameValue
@@ -68,10 +83,109 @@ class cardViewController: UIViewController {
     
     @IBOutlet weak var viewCardImage: UIImageView!
 
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
+    
+    @IBOutlet weak var fileButton: UIBarButtonItem!
+    
+    @IBOutlet weak var deleteButton: UIButton!
+    
+    @IBOutlet weak var editSaveButton: UIButton!
+    
+    @IBAction func deleteTapped(_ sender: Any) {
+        editSaveButton.isEnabled = false
+        deleteButton.isEnabled = false
+        Database.database().reference().child(categoryNameValue).child("Cards").child(cardNameValue).removeValue()
+        Storage.storage().reference().child("images").child("\(uuid).jpg").delete { (error) in
+            print ("We deleted the image")
+        }
+    }
     
     
+    @IBAction func editTapped(_ sender: Any) {
     
+        if editSaveButton.titleLabel!.text == "Edit" {
+    officeBoolSwitch.isEnabled = true
+    osdBoolSwitch.isEnabled = true
+    enginesBoolSwitch.isEnabled = true
+    ldcBoolSwitch.isEnabled = true
+    modulesBoolSwitch.isEnabled = true
+    productTitle.isEnabled = true
+    productDetails.isEnabled = true
+    productSupplier.isEnabled = true
+        cameraButton.isEnabled = true
+        fileButton.isEnabled = true
+            editSaveButton.setTitle("Save", for: UIControl.State.normal)
+        
+        } else {
+            editSaveButton.setTitle("Edit", for: UIControl.State.normal)
+            editSaveButton.isEnabled = false
+        Database.database().reference().child(categoryNameValue).child("Cards").child(cardNameValue).removeValue()
+            
+            let imagesFolder = Storage.storage().reference().child("images").child("\(uuid).jpg")
+                   
+            let imageData = viewCardImage.image!.jpegData(compressionQuality: 0.1)!
+            
+            imagesFolder.putData(imageData, metadata: nil) { (metadata, error) in
+                print ("we tried to upload")
+                guard metadata != nil else {
+                    return
+                }
+                if error != nil {
+                                print("we had an error: \(String(describing: error))")
+                } else {
+                    imagesFolder.downloadURL { (url, error) in
+                        self.imageURL = url!.absoluteString
+                        print(self.imageURL)
+                        print("1")
+                        self.performSegue(withIdentifier: "cardEditedSegue", sender: self.imageURL)
+                    }
+                }
+            }
+            print("2")
+
+            prodTitle = productTitle.text! as NSString
+            prodDetails = productDetails.text! as NSString
+            prodSupplier = productSupplier.text! as NSString
+        }
+    }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+         let image = (info[UIImagePickerController.InfoKey.originalImage] as! UIImage)
+         viewCardImage.contentMode = .scaleAspectFill
+         viewCardImage.image = image
+
+         
+         imagePicker.dismiss(animated: true, completion: nil)
+         editSaveButton.isEnabled = true
+     }
     
+    @IBAction func cameraTapped(_ sender: Any) {
+        imagePicker.sourceType = .camera
+        imagePicker.allowsEditing = false
+        present(imagePicker, animated: true, completion: nil)
+    }
     
+    @IBAction func fileTapped(_ sender: Any) {
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = false
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if(segue.identifier == "cardEditedSegue"){
+                    let displayVC = segue.destination as? DoneViewController
+                displayVC!.categoryNameValue = categoryNameValue
+                displayVC!.prodTitle = prodTitle
+                displayVC!.prodSupplier = prodSupplier
+                displayVC!.prodDetails = prodDetails
+                displayVC!.office = office
+                displayVC!.osd = osd
+                displayVC!.engines = engines
+                displayVC!.modules = modules
+                displayVC!.ldc = ldc
+                displayVC!.imageURL = sender as! String
+                displayVC!.uuid = uuid
+
+    }
+}
 }

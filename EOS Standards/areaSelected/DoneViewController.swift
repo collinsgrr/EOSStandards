@@ -22,6 +22,7 @@ class DoneViewController: UIViewController {
        var modules : NSNumber = 0
        var ldc : NSNumber = 0
        var imageURL : String = ""
+        var uuid : NSString = ""
     
     
     
@@ -31,7 +32,7 @@ class DoneViewController: UIViewController {
 
         // Do any additional setup after loading the view.
       
-        let card = ["name": prodTitle , "description" : prodDetails ,"supplier":prodSupplier ,"officeBool":office ,"enginesBool":engines ,"modulesBool":modules ,"osdBool":osd,"ldcBool":ldc,"imageURL":imageURL] as NSDictionary
+        let card = ["name": prodTitle , "description" : prodDetails ,"supplier":prodSupplier ,"officeBool":office ,"enginesBool":engines ,"modulesBool":modules ,"osdBool":osd,"ldcBool":ldc,"imageURL":imageURL,"uuid":uuid] as NSDictionary
         Database.database().reference().child(categoryNameValue!).child("Cards").child(prodTitle as String).setValue(card)
     }
     
