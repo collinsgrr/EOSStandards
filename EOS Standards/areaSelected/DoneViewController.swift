@@ -34,6 +34,7 @@ class DoneViewController: UIViewController {
       
         let card = ["name": prodTitle , "description" : prodDetails ,"supplier":prodSupplier ,"officeBool":office ,"enginesBool":engines ,"modulesBool":modules ,"osdBool":osd,"ldcBool":ldc,"imageURL":imageURL,"uuid":uuid] as NSDictionary
         Database.database().reference().child(categoryNameValue!).child("Cards").child(prodTitle as String).setValue(card)
+        print(card)
     }
     
     @IBAction func doneTapped(_ sender: Any) {

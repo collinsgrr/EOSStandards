@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K6G-br-pUB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K6G-br-pUB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -79,10 +79,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EOS Standards" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nd-ct-uVs">
                                 <rect key="frame" x="0.0" y="118" width="414" height="148.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="148.5" id="oB4-Vk-jYn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="45"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="39"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -140,7 +137,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0697716102" green="0.0" blue="0.61180216070000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="wLe-Ta-Mdb" firstAttribute="height" secondItem="abg-mh-eQC" secondAttribute="height" id="2dt-mw-o8n"/>
                             <constraint firstItem="jxb-Cf-vXy" firstAttribute="bottom" secondItem="abg-mh-eQC" secondAttribute="bottom" constant="179" id="3Qa-qH-drp"/>
@@ -443,7 +440,6 @@
                             <constraint firstItem="3fy-lx-pov" firstAttribute="trailing" secondItem="wth-hy-MwJ" secondAttribute="trailing" id="diA-QP-96z"/>
                             <constraint firstItem="y3h-jQ-Gwd" firstAttribute="top" secondItem="4U9-NT-0qD" secondAttribute="bottom" constant="18.5" id="elE-EG-Y5B"/>
                             <constraint firstItem="qQd-l6-dxF" firstAttribute="leading" secondItem="y3h-jQ-Gwd" secondAttribute="trailing" constant="34" id="fge-Af-p5K"/>
-                            <constraint firstItem="vOi-Fg-r8Q" firstAttribute="trailing" secondItem="De5-UR-KVe" secondAttribute="trailing" constant="20" id="gGO-BR-CTd"/>
                             <constraint firstItem="De5-UR-KVe" firstAttribute="top" secondItem="mlN-Pg-6MY" secondAttribute="bottom" constant="8" id="kRM-QH-cno"/>
                             <constraint firstItem="jS2-Go-bfm" firstAttribute="leading" secondItem="UQh-KG-nXA" secondAttribute="leading" id="kg2-QV-5JB"/>
                             <constraint firstItem="qQd-l6-dxF" firstAttribute="leading" secondItem="83L-Wj-Zj4" secondAttribute="leading" id="lgu-O9-iHg"/>
@@ -644,18 +640,33 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="39m-p0-0Qe">
                                 <rect key="frame" x="128" y="371.5" width="51" height="31"/>
+                                <connections>
+                                    <action selector="officeTapped:" destination="rqW-rV-92V" eventType="valueChanged" id="td3-rf-VSQ"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2L5-Rq-rw3">
                                 <rect key="frame" x="128" y="405" width="51" height="31"/>
+                                <connections>
+                                    <action selector="engineTapped:" destination="rqW-rV-92V" eventType="valueChanged" id="hrf-GM-qWI"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Tda-k2-YiU">
                                 <rect key="frame" x="128" y="440" width="51" height="31"/>
+                                <connections>
+                                    <action selector="modulesTapped:" destination="rqW-rV-92V" eventType="valueChanged" id="b9C-3u-aZs"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="srA-hk-hYd">
                                 <rect key="frame" x="294" y="371.5" width="51" height="31"/>
+                                <connections>
+                                    <action selector="osdTapped:" destination="rqW-rV-92V" eventType="valueChanged" id="yhx-4b-VCS"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="T41-Qs-Ged">
                                 <rect key="frame" x="294" y="405" width="51" height="31"/>
+                                <connections>
+                                    <action selector="ldcTapped:" destination="rqW-rV-92V" eventType="valueChanged" id="axS-DY-9CM"/>
+                                </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6R-OV-Y0L">
                                 <rect key="frame" x="128" y="695" width="158" height="46"/>
@@ -677,7 +688,6 @@
                             <constraint firstItem="U3C-9a-RGv" firstAttribute="bottom" secondItem="C8Z-oT-guQ" secondAttribute="bottom" constant="50" id="5d7-Cq-WUq"/>
                             <constraint firstItem="39m-p0-0Qe" firstAttribute="top" secondItem="srA-hk-hYd" secondAttribute="top" id="5gm-cj-Ab4"/>
                             <constraint firstItem="wgV-Qf-PGT" firstAttribute="trailing" secondItem="U3C-9a-RGv" secondAttribute="trailing" id="5z8-7c-9yR"/>
-                            <constraint firstItem="0fw-6e-7sX" firstAttribute="trailing" secondItem="s48-Y7-InV" secondAttribute="trailingMargin" id="6cA-Gc-TSg"/>
                             <constraint firstItem="zgP-iq-z2K" firstAttribute="baseline" secondItem="2CD-wA-4pY" secondAttribute="baseline" id="6en-Zu-ze3"/>
                             <constraint firstItem="C8Z-oT-guQ" firstAttribute="top" secondItem="Y6R-OV-Y0L" secondAttribute="bottom" constant="39" id="88k-tF-lu3"/>
                             <constraint firstItem="Rhb-ub-N3q" firstAttribute="leading" secondItem="s48-Y7-InV" secondAttribute="leadingMargin" id="A3L-PW-tan"/>
@@ -752,6 +762,7 @@
                         <outlet property="productTitle" destination="0fw-6e-7sX" id="cLZ-pb-ivE"/>
                         <outlet property="viewCardImage" destination="kwJ-NH-fAl" id="D4O-zO-TBX"/>
                         <segue destination="lW9-f0-YyN" kind="show" identifier="cardEditedSegue" id="t05-YT-Fdb"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="cardDeletedSegue" id="Bhu-Q8-usU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UIe-90-gzk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -760,8 +771,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uiS-vO-WeC"/>
+        <segue reference="t05-YT-Fdb"/>
         <segue reference="OPe-TY-buW"/>
-        <segue reference="cXi-qz-rSU"/>
+        <segue reference="Bhu-Q8-usU"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -91,12 +91,63 @@ class cardViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBOutlet weak var editSaveButton: UIButton!
     
+    @IBAction func officeTapped(_ sender: Any) {
+        if officeBoolSwitch.isOn {
+            officeBoolSwitch.setOn(true, animated:true)
+            print(office)
+        } else {
+            officeBoolSwitch.setOn(false, animated:true)
+            office = 0
+        }
+    }
+    @IBAction func engineTapped(_ sender: Any) {
+        if enginesBoolSwitch.isOn {
+                  enginesBoolSwitch.setOn(true, animated:true)
+            engines = 1
+              } else {
+                  enginesBoolSwitch.setOn(false, animated:true)
+            engines = 0
+              }
+    }
+    
+    @IBAction func modulesTapped(_ sender: Any) {
+       if modulesBoolSwitch.isOn {
+            modulesBoolSwitch.setOn(true, animated:true)
+        modules = 1
+        } else {
+            modulesBoolSwitch.setOn(false, animated:true)
+        modules = 0
+        }
+    }
+    
+    @IBAction func osdTapped(_ sender: Any) {
+        if osdBoolSwitch.isOn {
+                osdBoolSwitch.setOn(true, animated:true)
+            osd = 1
+                     } else {
+                osdBoolSwitch.setOn(false, animated:true)
+            osd = 0
+                     }
+    }
+    
+    @IBAction func ldcTapped(_ sender: Any) {
+        if ldcBoolSwitch.isOn {
+            ldcBoolSwitch.setOn(true, animated:true)
+            ldc = 1
+        } else {
+           ldcBoolSwitch.setOn(false, animated:true)
+            ldc = 0
+        }
+    }
+    
+    
     @IBAction func deleteTapped(_ sender: Any) {
         editSaveButton.isEnabled = false
         deleteButton.isEnabled = false
         Database.database().reference().child(categoryNameValue).child("Cards").child(cardNameValue).removeValue()
         Storage.storage().reference().child("images").child("\(uuid).jpg").delete { (error) in
             print ("We deleted the image")
+            self.performSegue(withIdentifier: "cardDeletedSegue", sender: nil)
         }
     }
     
