@@ -13,7 +13,7 @@ import FirebaseDatabase
 
 
 class DetailFurnitureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     var categoryNameValue: String? = ""
     var prodTitle : NSString = ""
     var prodDetails : NSString = ""
@@ -28,9 +28,11 @@ class DetailFurnitureViewController: UIViewController, UIImagePickerControllerDe
     var uuid : NSString = NSUUID().uuidString as NSString
     
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var productTitle: UITextField!
-    @IBOutlet weak var productDetails: UITextField!
-    @IBOutlet weak var productSupplier: UITextField!
+    
+    @IBOutlet weak var productTitle: UITextView!
+    @IBOutlet weak var productSupplier: UITextView!
+    @IBOutlet weak var productDetails: UITextView!
+    
      
     @IBOutlet weak var officeSwitch: UISwitch!
     @IBOutlet weak var osanddSwitch: UISwitch!
@@ -42,6 +44,7 @@ class DetailFurnitureViewController: UIViewController, UIImagePickerControllerDe
     @IBAction func officeTapped(_ sender: Any) {
         if officeSwitch.isOn {
             officeSwitch.setOn(true, animated:true)
+            office = 1
             print(office)
         } else {
             officeSwitch.setOn(false, animated:true)
@@ -155,7 +158,7 @@ class DetailFurnitureViewController: UIViewController, UIImagePickerControllerDe
         prodSupplier = productSupplier.text! as NSString
         
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "furnitureDoneSegue"){
                 let displayVC = segue.destination as? DoneViewController

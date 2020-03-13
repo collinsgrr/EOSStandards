@@ -21,9 +21,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>$(PRODUCT_NAME) Camera access is required to capture images of various standards within the business.</string>
+	<string>$(PRODUCT_NAME) We need access to your camera to capture images of Standards on site</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>$(PRODUCT_NAME) Photo Library access is required to use images already captured of various standards within the business.</string>
+	<string>$(PRODUCT_NAME) We need access to your photo library to capture images of Standards on site</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

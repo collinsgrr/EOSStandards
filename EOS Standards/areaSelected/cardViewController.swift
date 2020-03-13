@@ -61,19 +61,20 @@ class cardViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         enginesBoolSwitch.isEnabled = false
         ldcBoolSwitch.isEnabled = false
         modulesBoolSwitch.isEnabled = false
-        productTitle.isEnabled = false
-        productDetails.isEnabled = false
-        productSupplier.isEnabled = false
+        productTitle.allowsEditingTextAttributes = false
+        productDetails.allowsEditingTextAttributes = false
+        productSupplier.allowsEditingTextAttributes = false
         
         imageURL = cardImageURL as String
-        print(imageURL)
+        //print(imageURL)
         viewCardImage.sd_setImage(with: URL(string: imageURL))
         // Do any additional setup after loading the view.
     }
 
-    @IBOutlet weak var productTitle: UITextField!
-    @IBOutlet weak var productDetails: UITextField!
-    @IBOutlet weak var productSupplier: UITextField!
+
+    @IBOutlet weak var productTitle: UITextView!
+    @IBOutlet weak var productDetails: UITextView!
+    @IBOutlet weak var productSupplier: UITextView!
     
     @IBOutlet weak var officeBoolSwitch: UISwitch!
     @IBOutlet weak var osdBoolSwitch: UISwitch!
@@ -94,6 +95,7 @@ class cardViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBAction func officeTapped(_ sender: Any) {
         if officeBoolSwitch.isOn {
             officeBoolSwitch.setOn(true, animated:true)
+            office = 1
             print(office)
         } else {
             officeBoolSwitch.setOn(false, animated:true)
@@ -160,9 +162,16 @@ class cardViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     enginesBoolSwitch.isEnabled = true
     ldcBoolSwitch.isEnabled = true
     modulesBoolSwitch.isEnabled = true
-    productTitle.isEnabled = true
-    productDetails.isEnabled = true
-    productSupplier.isEnabled = true
+    productTitle.allowsEditingTextAttributes  = true
+    productDetails.allowsEditingTextAttributes  = true
+    productSupplier.allowsEditingTextAttributes  = true
+            officeBoolSwitch.setOn(false, animated:true)
+            osdBoolSwitch.setOn(false, animated:true)
+            ldcBoolSwitch.setOn(false, animated:true)
+            modulesBoolSwitch.setOn(false, animated:true)
+            enginesBoolSwitch.setOn(false, animated:true)
+            
+            
         cameraButton.isEnabled = true
         fileButton.isEnabled = true
             editSaveButton.setTitle("Save", for: UIControl.State.normal)
